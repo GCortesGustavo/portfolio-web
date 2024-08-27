@@ -2,12 +2,18 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from "../components/Hero.astro"
 import About from "../components/About.astro"
+import SectionContainer from '../components/SectionContainer.astro';
 ---
 
-<Layout title="Gustavo Cortes" description='Diseña tu web junto a mi!'>
+<Layout title="Gustavo Cortes" description='Desarrollador y programador web full stack'>
 	<main class="px-4">
-		<Hero />
-		<About />
+		<SectionContainer class="py-16 md:py-36">
+			<Hero />
+			</slot>
+		</SectionContainer>
+		<SectionContainer id="sobre-mi" class="pt-32 pb-32 md:pb-36">
+			<About />
+		</SectionContainer>
 	</main>
 </Layout>
 
