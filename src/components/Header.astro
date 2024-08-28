@@ -3,15 +3,29 @@
     class="rounded-full w-12 h-12"
     src="/yo3D.jpg" 
     alt="Logo">
-    <nav class="flex flex-row gap-x-10 opacity-55">
-        <a href="#top">Inicio</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#proyecto">Proyectos</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#contacto">Contacto</a>
+    <nav class="flex flex-row gap-x-10 opacity-80">
+        <a href="#top" class="nav-link">Inicio</a>
+        <a href="#sobre-mi" class="nav-link">Sobre mí</a>
+        <a href="#proyecto" class="nav-link">Proyectos</a>
+        <a href="#experiencia" class="nav-link">Experiencia</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
     </nav>
 </header>
 
-<script>
+<style>
+    .nav-link {
+        border-radius: 10px;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.6;
+    }
 
-</script>
+    .nav-link:hover {
+        background-color: rgba(173, 216, 230, 0.6); /* Celeste pastel con opacidad */
+        opacity: 1;
+    }
+
+    .dark .nav-link:hover {
+    background-color: rgba(33, 13, 148, 0.6); /* Azul más oscuro en modo oscuro */
+    opacity: 1;
+}
+</style>

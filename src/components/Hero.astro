@@ -11,7 +11,7 @@ import TikTok from "../icons/TikTok.astro";
         <h1 class="font-bold text-8xl">GUSTAVO.</h1>
         <span id="dynamicText" class="text-xl block min-h-[2rem]" />
         <div class="mt-5 flex gap-4">
-            <button class="bg-slate-400 text-white py-2 px-4 rounded-lg hover:bg-slate-500 transition">Descargar CV</button>
+            <button class="bg-slate-400 text-white py-2 px-4 rounded-lg hover:bg-slate-500 transition" id="download-cv">Descargar CV</button>
             <button class="bg-transparent border border-slate-400 text-slate-400 py-2 px-4 rounded-lg hover:bg-slate-400 hover:text-white transition">Ver proyectos</button>
         </div>
         <div class="flex justify-start space-x-6 mt-8">
@@ -31,7 +31,7 @@ import TikTok from "../icons/TikTok.astro";
         
     </div>
     <div class="flex items-center">
-        <img src="/HeroImage.jpeg" alt="Gustavo Cortés" class="rounded-full object-cover h-full max-h-[300px] w-auto">
+        <img src="/HeroImage.jpg" alt="Gustavo Cortés" class="rounded-full object-cover h-full max-h-[300px] w-auto">
     </div>
 </div>
 
@@ -40,39 +40,50 @@ import TikTok from "../icons/TikTok.astro";
 </style>
 
 <script>
-const typeFunction = async () => {
-    const element = document.getElementById("dynamicText");
+    const typeFunction = async () => {
+        const element = document.getElementById("dynamicText");
 
-    if (!element) {
-        console.error("Element not found");
-        return; 
-    }
-
-    const phrases = ["Desarrollador Web Full Stack", "QA Automatizador de Pruebas"];
-    let currentPhrase = 0;
-
-    const typePhrase = async (phrase: string) => {
-        for (let i = 0; i < phrase.length; i++) {
-            element.textContent += phrase[i];
-            await new Promise(resolve => setTimeout(resolve, 100));
+        if (!element) {
+            console.error("Element not found");
+            return; 
         }
-        await new Promise(resolve => setTimeout(resolve, 2000));
-    };
 
-    const deletePhrase = async () => {
-        if (!element || !element.textContent) return; // Validación adicional
-        while (element.textContent.length > 0) {
-        element.textContent = element.textContent.slice(0, -1);
-        await new Promise(resolve => setTimeout(resolve, 50));
-    }
-    };
+        const phrases = ["Desarrollador Web Full Stack", "QA Automatizador de Pruebas"];
+        let currentPhrase = 0;
 
-    while (true) {
-        await typePhrase(phrases[currentPhrase]);
-        await deletePhrase();
-        currentPhrase = (currentPhrase + 1) % phrases.length;
-    }
-};
+        const typePhrase = async (phrase: string) => {
+            for (let i = 0; i < phrase.length; i++) {
+                element.textContent += phrase[i];
+                await new Promise(resolve => setTimeout(resolve, 100));
+            }
+            await new Promise(resolve => setTimeout(resolve, 2000));
+        };
+
+        const deletePhrase = async () => {
+            if (!element || !element.textContent) return; // Validación adicional
+            while (element.textContent.length > 0) {
+            element.textContent = element.textContent.slice(0, -1);
+            await new Promise(resolve => setTimeout(resolve, 50));
+        }
+        };
+
+        while (true) {
+            await typePhrase(phrases[currentPhrase]);
+            await deletePhrase();
+            currentPhrase = (currentPhrase + 1) % phrases.length;
+        }
+    };
 
     window.onload = typeFunction;
+
+    const downloadCV = () => {
+        const link = document.createElement("a")
+        link.href="/GUSTAVO-CORTES-CV-FS.pdf"
+        link.download="GUSTAVO-CORTES-CV-FS.pdf"
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link);
+    }
+
+    document.getElementById("download-cv")?.addEventListener('click', downloadCV);
 </script>

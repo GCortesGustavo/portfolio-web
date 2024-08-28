@@ -23,8 +23,8 @@ const { title, description } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="light relative">
-		<div class="absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)] dark:hidden"></div>
-		<div class="absolute top-0 z-[-2] h-screen w-screen bg-slate-950 bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)] hidden dark:block"></div>
+		<div class="absolute top-0 z-[-2] h-full w-full bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)] dark:hidden"></div>
+		<div class="absolute top-0 z-[-2] h-full w-full bg-slate-950 bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)] hidden dark:block"></div>
 
 		<Header />
 		<button id="theme-toggle" class="absolute top-4 right-4 p-2 bg-gray-200 dark:bg-gray-700 rounded-full">
@@ -77,4 +77,22 @@ const { title, description } = Astro.props;
 	button {
 		cursor: pointer;
 	}
+
+    /* Enlaces */
+	.nav-link {
+        padding: 10px 20px;
+        border-radius: 10px;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.6;
+    }
+
+    .nav-link:hover {
+        background-color: rgba(173, 216, 230, 0.6); /* Celeste pastel en modo claro */
+        opacity: 1;
+    }
+
+    .dark .nav-link:hover {
+        background-color: rgba(11, 3, 122, 0.6); /* Azul más oscuro en modo oscuro */
+        opacity: 1;
+    }
 </style>
