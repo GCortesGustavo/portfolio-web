@@ -6,6 +6,8 @@ import SectionContainer from '../components/SectionContainer.astro';
 import TitleSection from '../components/TitleSection.astro';
 import Tecnologias from '../components/Tecnologias.astro';
 import Proyectos from '../components/Proyectos.astro';
+import Contacto from '../components/Contacto.astro';
+import Experiencia from '../components/Experiencia.astro';
 ---
 
 <Layout title="Gustavo Cortes" description='Desarrollador y programador web full stack'>
@@ -34,6 +36,21 @@ import Proyectos from '../components/Proyectos.astro';
 				Proyectos
 			</TitleSection>
 			<Proyectos />
+		</SectionContainer>
+
+
+		<SectionContainer class="mb-36" id="experiencia">
+			<TitleSection>
+				Experiencia
+			</TitleSection>
+			<Experiencia />
+		</SectionContainer>
+
+		<SectionContainer class="mb-36" id="contacto">
+			<TitleSection>
+				Contacto
+			</TitleSection>
+			<Contacto />
 		</SectionContainer>
 	</main>
 </Layout>
