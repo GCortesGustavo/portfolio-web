@@ -4,6 +4,8 @@ import Hero from "../components/Hero.astro"
 import About from "../components/About.astro"
 import SectionContainer from '../components/SectionContainer.astro';
 import TitleSection from '../components/TitleSection.astro';
+import Tecnologias from '../components/Tecnologias.astro';
+import Proyectos from '../components/Proyectos.astro';
 ---
 
 <Layout title="Gustavo Cortes" description='Desarrollador y programador web full stack'>
@@ -13,11 +15,25 @@ import TitleSection from '../components/TitleSection.astro';
 			</slot>
 		</SectionContainer>
 		
-		<SectionContainer id="sobre-mi" class="flex-col items-center justify-center">
+		<SectionContainer id="sobre-mi" class="flex-col items-center justify-center mb-36">
 			<TitleSection >
 				Sobre mí
 			</TitleSection>
 			<About />
+		</SectionContainer>
+
+		<SectionContainer class="mb-36" id="tecnologias">
+			<TitleSection >
+				Tecnologías
+			</TitleSection>
+			<Tecnologias />
+		</SectionContainer>
+
+		<SectionContainer class="mb-36" id="proyectos">
+			<TitleSection >
+				Proyectos
+			</TitleSection>
+			<Proyectos />
 		</SectionContainer>
 	</main>
 </Layout>
