@@ -1,10 +1,148 @@
 ---
-
+const PROYECTOS = [
+    {
+        title: "CioffiGestion",
+        description: "Describiendo mi proyecto",
+        image: "/proyectos/cioffigestion.jpg",
+        github: "Link a github",
+        link: "Al porfolio",
+        tags: ["HTML", "CSS", "JAVASCRIPT"]
+    },
+    {
+        title: "Testing con Cypress",
+        description: "Describiendo mi proyecto",
+        image: "/proyectos/cypress.jpg",
+        github: "Link a github",
+        link: "Al porfolio",
+        tags: ["HTML", "CSS", "JAVASCRIPT"]
+    },
+    {
+        title: "Testing con Playwright",
+        description: "Describiendo mi proyecto",
+        image: "/proyectos/playwright.jpg",
+        github: "Link a github",
+        link: "Al porfolio",
+        tags: ["HTML", "CSS", "JAVASCRIPT"]
+    },
+    {
+        title: "Testing con Puppeteer",
+        description: "Describiendo mi proyecto",
+        image: "/proyectos/puppeteerm.jpg",
+        github: "Link a github",
+        link: "Al porfolio",
+        tags: ["HTML", "CSS", "JAVASCRIPT"]
+    },
+    {
+        title: "E-CommerceVue",
+        description: "Describiendo mi proyecto",
+        image: "/proyectos/ecommercevue.jpg",
+        github: "Link a github",
+        link: "Al porfolio",
+        tags: ["HTML", "CSS", "JAVASCRIPT"]
+    },
+    {
+        title: "Arkanoid",
+        description: "Describiendo mi proyecto",
+        image: "/proyectos/arkanoid.jpg",
+        github: "Link a github",
+        link: "Al porfolio",
+        tags: ["HTML", "CSS", "JAVASCRIPT"]
+    },
+    {
+        title: "50MiniProyectos",
+        description: "Describiendo mi proyecto",
+        image: "/proyectos/50proyectos.jpg",
+        github: "Link a github",
+        link: "Al porfolio",
+        tags: ["HTML", "CSS", "JAVASCRIPT"]
+    },
+    {
+        title: "Somos Jardin Web",
+        description: "Describiendo mi proyecto",
+        image: "/proyectos/somosjardinweb.jpg",
+        github: "Link a github",
+        link: "Al porfolio",
+        tags: ["HTML", "CSS", "JAVASCRIPT"]
+    },
+    {
+        title: "Pugstagram",
+        description: "Describiendo mi proyecto",
+        image: "/proyectos/pugstagram.jpg",
+        github: "Link a github",
+        link: "Al porfolio",
+        tags: ["HTML", "CSS", "JAVASCRIPT"]
+    },
+    {
+        title: "LiveChatG",
+        description: "Describiendo mi proyecto",
+        image: "/proyectos/livechatg.jpg",
+        github: "Link a github",
+        link: "Al porfolio",
+        tags: ["HTML", "CSS", "JAVASCRIPT"]
+    },
+    {
+        title: "Testa Clone",
+        description: "Describiendo mi proyecto",
+        image: "/proyectos/testaclone.jpg",
+        github: "Link a github",
+        link: "Al porfolio",
+        tags: ["HTML", "CSS", "JAVASCRIPT"]
+    },
+    {
+        title: "Pokedex",
+        description: "Describiendo mi proyecto",
+        image: "/proyectos/Pokedex.jpg",
+        github: "Link a github",
+        link: "Al porfolio",
+        tags: ["HTML", "CSS", "JAVASCRIPT"]
+    },
+    {
+        title: "RoFe Ferretería",
+        description: "Describiendo mi proyecto",
+        image: "/proyectos/RoFe.jpg",
+        github: "Link a github",
+        link: "Al porfolio",
+        tags: ["HTML", "CSS", "JAVASCRIPT"]
+    },
+    {
+        title: "Doggys App",
+        description: "Describiendo mi proyecto",
+        image: "/proyectos/Dogs.jpg",
+        github: "Link a github",
+        link: "Al porfolio",
+        tags: ["HTML", "CSS", "JAVASCRIPT"]
+    }
+]
 ---
 
-<div>
-    <h1>Proyecto 1</h1>
-    <h1>Proyecto 2</h1>
-    <h1>Proyecto 3</h1>
-    <h1>Proyecto 4</h1>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
+    {PROYECTOS.map(({ title, description, github, image, link, tags }) => (
+        <div class="relative group">
+            
+            <div class="relative overflow-hidden rounded-xl shadow-lg">
+                <img
+                    src={image}
+                    alt={`Captura de pantalla de ${title}`}
+                    class="rounded-xl object-cover w-full h-64 transition-transform duration-500 group-hover:blur-sm group-hover:scale-105"
+                />
+                <h2 class="absolute bottom-4 left-4 text-white text-xl font-bold z-10 bg-slate-950/50 px-2 py-1 rounded">
+                    {title}
+                </h2>
+            </div>
+
+            {/* Contenido que aparece al hover */}
+            <div class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl p-4">
+                <p class="text-white mb-4">{description}</p>
+                <a href={link} class="text-blue-400 mb-2 underline">Ver Proyecto</a>
+                <a href={github} class="text-blue-400 underline">GitHub</a>
+                <ul class="flex mt-4 space-x-2">
+                    {tags.map(tag => (
+                        <li class="bg-white text-gray-800 py-1 px-3 rounded-full text-sm">
+                            {tag}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+    ))}
 </div>
