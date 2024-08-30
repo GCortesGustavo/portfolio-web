@@ -22,12 +22,6 @@ const { title, description } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 
-		<!-- <script type="text/javascript"
-			src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-		<script type="text/javascript">
-			emailjs.init('xWktyszsoVyTRnRw7')
-		</script> -->
 
 	</head>
 	<body class="light relative">
@@ -35,9 +29,11 @@ const { title, description } = Astro.props;
 		<div class="absolute top-0 z-[-2] h-full w-full bg-slate-950 bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)] hidden dark:block"></div>
 
 		<Header />
-		<button id="theme-toggle" class="top-4 mx-4 size-14 right-4 p-2 bg-gray-200 dark:bg-gray-700 rounded-full fixed">
+
+		<button id="theme-toggle" class="flex items-center justify-center theme-toggle-button top-4 mt-20 right-4 p-2  dark:bg-gray-50 rounded-full fixed">
 			<ThemeToggle />
 		</button>
+
 		<slot />
 		<Footer />
 		<script>
@@ -60,14 +56,17 @@ const { title, description } = Astro.props;
 
 <style is:global>
 	:root {
+		--font-family-primary: 'Recursive Variable', sans-serif;
 		color-scheme: light dark;
 	}
+
 	html {
-		font-family: system-ui, sans-serif;
+		font-family: var(--font-family-primary);
 		scroll-behavior: smooth;
 	}
 
 	body {
+		font-family: var(--font-family-primary);
 		color: rgba(17, 17, 17, 0.9);
         display: flex;
         flex-direction: column;
@@ -84,6 +83,31 @@ const { title, description } = Astro.props;
 
 	button {
 		cursor: pointer;
+	}
+
+	/* Responsive Theme Toggle Button */
+	.theme-toggle-button {
+		width: 48px;
+		height: 48px;
+		transition: all 0.3s ease-in-out;
+	}
+
+	@media (max-width: 768px) {
+		.theme-toggle-button {
+			width: 40px;
+			height: 40px;
+			top: 1rem;
+			right: 1rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.theme-toggle-button {
+			width: 36px;
+			height: 36px;
+			top: 0.5rem;
+			right: 0.5rem;
+		}
 	}
 
     /* Enlaces */
