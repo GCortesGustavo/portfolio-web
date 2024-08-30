@@ -1,23 +1,130 @@
-<div class="max-w-lg mx-auto p-6 rounded-lg shadow-lg border border-gray-200 mt-6">
-    <form id="contact-form" action="/send-email" method="POST" class="space-y-4">
+<div class="max-w-lg mx-auto p-6 rounded-lg shadow-lg border border-gray-200 mt-6 bg-white dark:bg-slate-800 dark:border-slate-700">
+    <form id="form" class="space-y-4">
         <div>
-            <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
-            <input type="email" id="email" name="email" placeholder="Escribe tu correo" required
-                class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"/>
+            <label for="from_name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nombre</label>
+            <input 
+                type="text"
+                placeholder="Escribe tu nombre" 
+                name="from_name" 
+                id="from_name"
+                class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-white dark:bg-slate-700 dark:border-slate-600 text-black dark:text-gray-300"
+                />
         </div>
         <div>
-            <label for="subject" class="block text-sm font-medium text-gray-700">Asunto</label>
-            <input type="text" id="subject" name="subject" placeholder="Asunto" required
-                class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"/>
+            <label for="email_id" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Correo Electrónico</label>
+            <input 
+                type="text" 
+                placeholder="Escribe tu correo electrónico"
+                name="email_id" 
+                id="email_id"
+                class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-white dark:bg-slate-700 dark:border-slate-600 text-black dark:text-gray-300"
+                />
         </div>
         <div>
-            <label for="message" class="block text-sm font-medium text-gray-700">Mensaje</label>
-            <textarea id="message" name="message" placeholder="Escribe tu mensaje" rows="4" required
-                class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Mensaje</label>
+            <textarea
+                placeholder="Escribe tu mensaje!"
+                name="message"
+                id="message"
+                rows="4" 
+                class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-white dark:bg-slate-700 dark:border-slate-600 text-black dark:text-gray-300"
+            ></textarea>
         </div>
-        <button type="submit"
-            class="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-            Enviar
-        </button>
+        
+        <input 
+            type="submit" 
+            id="button" 
+            value="Enviar Mensaje" 
+            class="w-full py-2 px-4 bg-blue-700 text-white font-semibold rounded-md shadow-sm hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:bg-blue-800 dark:hover:bg-green-600">
     </form>
 </div>
+
+
+<script>
+    import Swal from 'sweetalert2';
+    
+    const btn = document.getElementById('button') as HTMLInputElement | null;
+    const form = document.getElementById('form') as HTMLFormElement | null;
+
+    const validateEmail = (email: string) => {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+    };
+
+    if (form && btn) {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const fromName = (document.getElementById('from_name') as HTMLInputElement).value.trim();
+            const emailId = (document.getElementById('email_id') as HTMLInputElement).value.trim();
+            const message = (document.getElementById('message') as HTMLTextAreaElement).value.trim();
+
+            // Validaciones
+            if (fromName.length < 3) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'El nombre debe tener al menos 3 caracteres.',
+                    confirmButtonColor: '#d33',
+                    confirmButtonText: 'Ok'
+                });
+                return;
+            }
+
+            if (!validateEmail(emailId)) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'El correo electrónico no es válido.',
+                    confirmButtonColor: '#d33',
+                    confirmButtonText: 'Ok'
+                });
+                return;
+            }
+
+            if (message === '') {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'El mensaje no puede estar vacío.',
+                    confirmButtonColor: '#d33',
+                    confirmButtonText: 'Ok'
+                });
+                return;
+            }
+
+            // Si las validaciones pasan, enviar el formulario
+            btn.value = 'Enviando...';
+
+            const serviceID = 'default_service';
+            const templateID = 'template_d6qt47k';
+
+            emailjs.sendForm(serviceID, templateID, form)
+                .then(() => {
+                    btn.value = 'Enviar Mensaje';
+                    Swal.fire({
+                        icon: 'success',
+                        title: '¡Mensaje enviado!',
+                        text: 'Tu mensaje ha sido enviado correctamente.',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'Ok'
+                    });
+                }, (err: any) => {
+                    btn.value = 'Enviar Mensaje';
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: `Hubo un problema: ${JSON.stringify(err)}`,
+                        confirmButtonColor: '#d33',
+                        confirmButtonText: 'Ok'
+                    });
+                });
+        });
+    }
+</script>
+
+<script type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+emailjs.init('xWktyszsoVyTRnRw7')
+</script>
