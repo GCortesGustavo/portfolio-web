@@ -11,11 +11,11 @@ const PROYECTOS = [
     },
     {
         title: "Testing con Cypress",
-        description: "Entorno de pruebas con Vypress",
+        description: "Entorno de pruebas con Cypress",
         image: "/proyectos/cypress.jpg",
         github: "https://github.com/GCortesGustavo/cypressBackend",
         link: "",
-        tags: ["Cypress", "JAVASCRIPT"]
+        tags: ["Cypress", "Javascript"]
     },
     {
         title: "Testing con Playwright",
@@ -23,7 +23,7 @@ const PROYECTOS = [
         image: "/proyectos/playwright.jpg",
         github: "https://github.com/GCortesGustavo/playwright-test",
         link: "",
-        tags: ["Playwright", "JAVASCRIPT"]
+        tags: ["Playwright", "Javascript"]
     },
     {
         title: "Testing con Puppeteer",
@@ -31,7 +31,7 @@ const PROYECTOS = [
         image: "/proyectos/puppeteerm.jpg",
         github: "https://github.com/GCortesGustavo/bdd-puppeteer",
         link: "",
-        tags: ["Puppeteer", "JAVASCRIPT"]
+        tags: ["Puppeteer", "Javascript"]
     },
     {
         title: "E-CommerceVue",
@@ -47,7 +47,7 @@ const PROYECTOS = [
         image: "/proyectos/arkanoid.jpg",
         github: "https://github.com/GCortesGustavo/Arkanoid",
         link: "https://arkanoidg.netlify.app/",
-        tags: ["HTML", "CSS", "JAVASCRIPT"]
+        tags: ["HTML", "CSS", "Javascript"]
     },
     {
         title: "50MiniProyectos",
@@ -55,7 +55,7 @@ const PROYECTOS = [
         image: "/proyectos/50proyectos.jpg",
         github: "https://github.com/GCortesGustavo/50ProjectsMini",
         link: "https://50projectsmini.netlify.app/",
-        tags: ["HTML", "CSS", "JAVASCRIPT"]
+        tags: ["HTML", "CSS", "Javascript"]
     },
     {
         title: "Somos Jardin Web",
@@ -63,7 +63,7 @@ const PROYECTOS = [
         image: "/proyectos/somosjardinweb.jpg",
         github: "",
         link: "https://somos-jardinweb.vercel.app/",
-        tags: ["HTML", "CSS", "JAVASCRIPT"]
+        tags: ["HTML", "CSS", "Javascript"]
     },
     {
         title: "Pugstagram",
@@ -79,7 +79,7 @@ const PROYECTOS = [
         image: "/proyectos/livechatg.jpg",
         github: "https://github.com/GCortesGustavo/LiveChatg",
         link: "",
-        tags: ["Socket.io", "CSS", "JAVASCRIPT", "HTML"]
+        tags: ["Socket.io", "CSS", "Javascript", "HTML"]
     },
     {
         title: "Testa Clone",
@@ -87,7 +87,7 @@ const PROYECTOS = [
         image: "/proyectos/testaclone.jpg",
         github: "https://github.com/GCortesGustavo/Testa-Clone",
         link: "Al porfolio",
-        tags: ["HTML", "CSS", "JAVASCRIPT"]
+        tags: ["HTML", "CSS", "Javascript"]
     },
     {
         title: "Pokedex",
@@ -136,9 +136,9 @@ const PROYECTOS = [
                 <p class="text-white text-center text-sm sm:text-base mb-4">{description}</p>
                 <a href={link} target="_blank" class="text-blue-400 text-sm sm:text-base mb-2 underline">Ver Proyecto</a>
                 <a href={github} target="_blank" class="text-blue-400 underline"><GitHub class="size-6" /></a>
-                <ul class="flex mt-4 space-x-2">
+                <ul class="flex mt-4 space-x-2 space-y-2 flex-wrap">
                     {tags.map(tag => (
-                        <li class="bg-white text-gray-800 py-1 px-3 rounded-full text-xs sm:text-sm">
+                        <li class= "text-white font-bold py-1 px-3 rounded-full text-xs sm:text-sm flex items-center justify-center">
                             {tag}
                         </li>
                     ))}
