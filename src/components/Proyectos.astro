@@ -1,5 +1,6 @@
 ---
 import GitHub from "../icons/GitHub.astro"
+import Code from "../icons/Code.astro"
 const PROYECTOS = [
     {
         title: "CioffiGestion",
@@ -7,7 +8,8 @@ const PROYECTOS = [
         image: "/proyectos/cioffigestion.jpg",
         github: "",
         link: "",
-        tags: ["Next", "Firebase", "Javascript", "Tailwind"]
+        tags: ["Next", "Firebase", "Javascript", "Tailwind"],
+        tasks: ["Desarrollé una tabla de ventas y empleados.", "Implementé formulario para nuevos pedidos/empleados.", "Diseñé un dashboard para ingreso de encargados."]
     },
     {
         title: "Testing con Cypress",
@@ -15,7 +17,8 @@ const PROYECTOS = [
         image: "/proyectos/cypress.jpg",
         github: "https://github.com/GCortesGustavo/cypressBackend",
         link: "",
-        tags: ["Cypress", "Javascript"]
+        tags: ["Cypress", "Javascript"],
+        tasks: ["Creé un entorno de pruebas UI.", "Realicé testing de Backend y Apis.", "Apliqué pruebas automatizadas end-to-end."]
     },
     {
         title: "Testing con Playwright",
@@ -23,7 +26,8 @@ const PROYECTOS = [
         image: "/proyectos/playwright.jpg",
         github: "https://github.com/GCortesGustavo/playwright-test",
         link: "",
-        tags: ["Playwright", "Javascript"]
+        tags: ["Playwright", "Javascript"],
+        tasks: ["Creé un entorno de pruebas UI.", "Apliqué pruebas automatizadas end-to-end."]
     },
     {
         title: "Testing con Puppeteer",
@@ -31,7 +35,8 @@ const PROYECTOS = [
         image: "/proyectos/puppeteerm.jpg",
         github: "https://github.com/GCortesGustavo/bdd-puppeteer",
         link: "",
-        tags: ["Puppeteer", "Javascript"]
+        tags: ["Puppeteer", "Javascript"],
+        tasks: ["Creé un entorno de pruebas UI.", "Apliqué pruebas automatizadas end-to-end."]
     },
     {
         title: "E-CommerceVue",
@@ -39,7 +44,8 @@ const PROYECTOS = [
         image: "/proyectos/ecommercevue.jpg",
         github: "https://github.com/GCortesGustavo/E-CommerceVue",
         link: "",
-        tags: ["Vue", "Tailwind", "Javascript"]
+        tags: ["Vue", "Tailwind", "Javascript"],
+        tasks: ["Diseñé una interfaz para ver los productos.", "Traje información de Apis."]
     },
     {
         title: "Arkanoid",
@@ -47,7 +53,8 @@ const PROYECTOS = [
         image: "/proyectos/arkanoid.jpg",
         github: "https://github.com/GCortesGustavo/Arkanoid",
         link: "https://arkanoidg.netlify.app/",
-        tags: ["HTML", "CSS", "Javascript"]
+        tags: ["HTML", "CSS", "Javascript"],
+        tasks: ["Implementé lógica para las colisiones.", "Implementé lógica para choque de pelota con la paleta.", "Implementé lógica para el movimento de pelota y paleta."]
     },
     {
         title: "50MiniProyectos",
@@ -55,7 +62,8 @@ const PROYECTOS = [
         image: "/proyectos/50proyectos.jpg",
         github: "https://github.com/GCortesGustavo/50ProjectsMini",
         link: "https://50projectsmini.netlify.app/",
-        tags: ["HTML", "CSS", "Javascript"]
+        tags: ["HTML", "CSS", "Javascript"],
+        tasks: ["Creé una landing donde se encuentran los 50 proyectos.", "Desarrollé diversos proyectos para mejorar lógica."]
     },
     {
         title: "Somos Jardin Web",
@@ -63,7 +71,8 @@ const PROYECTOS = [
         image: "/proyectos/somosjardinweb.jpg",
         github: "",
         link: "https://somos-jardinweb.vercel.app/",
-        tags: ["HTML", "CSS", "Javascript"]
+        tags: ["Next", "Firebase", "Javascript"],
+        tasks: ["Implementé creación automatizada de usuarios.", "Diseñé y optimicé una tabla dinámica de ventas utilizando Javascript.", "Desarrollé una zona interactiva de comentarios con Javascript y Firebase."]
     },
     {
         title: "Pugstagram",
@@ -71,7 +80,8 @@ const PROYECTOS = [
         image: "/proyectos/pugstagram.jpg",
         github: "https://github.com/GCortesGustavo/Pugstagram",
         link: "",
-        tags: ["Svelte", "Tailwind", "Javascript"]
+        tags: ["Svelte", "Tailwind", "Javascript"],
+        tasks: ["Diseñé réplica de instagram con Svelte", "Desarrollé lógica para conteo de me gustas", "Implementé sección comentarios"]
     },
     {
         title: "LiveChatG",
@@ -79,7 +89,8 @@ const PROYECTOS = [
         image: "/proyectos/livechatg.jpg",
         github: "https://github.com/GCortesGustavo/LiveChatg",
         link: "",
-        tags: ["Socket.io", "CSS", "Javascript", "HTML"]
+        tags: ["Socket.io", "Javascript", "HTML"],
+        tasks: ["Desarrollé chat en tiempo real", "Implementé storage de mensajes enviados"]
     },
     {
         title: "Testa Clone",
@@ -87,7 +98,8 @@ const PROYECTOS = [
         image: "/proyectos/testaclone.jpg",
         github: "https://github.com/GCortesGustavo/Testa-Clone",
         link: "Al porfolio",
-        tags: ["HTML", "CSS", "Javascript"]
+        tags: ["Astro", "CSS", "Javascript"],
+        tasks: ["Diseñé clon de Tesla", "Implementé componentes con Astro", "Apliqué estilos con Tailwind"]
     },
     {
         title: "Pokedex",
@@ -95,7 +107,8 @@ const PROYECTOS = [
         image: "/proyectos/Pokedex.jpg",
         github: "https://github.com/GCortesGustavo/Pokedex",
         link: "https://main--pokedextypescriptgc.netlify.app/",
-        tags: ["React", "CSS", "Typescript"]
+        tags: ["React", "CSS", "Typescript"],
+        tasks: ["Capturé y rendericé información de pokemons", "Apliqué buscador por nombre", "Diseñé estilo interactivo según tipo de pokemon"]
     },
     {
         title: "RoFe Ferretería",
@@ -103,7 +116,8 @@ const PROYECTOS = [
         image: "/proyectos/RoFe.jpg",
         github: "https://github.com/ImanolBraccciale/PF-Ferreteria/tree/main",
         link: "",
-        tags: ["Next", "Tailwind", "Node", "SQL"]
+        tags: ["Next", "Tailwind", "Node", "SQL"],
+        tasks: ["Diseñé dashboard de Adminitrador", "Apliqué tablas dinámicas con Chart.js", "Realicé login de la web con auth de google"]
     },
     {
         title: "Doggys App",
@@ -111,39 +125,72 @@ const PROYECTOS = [
         image: "/proyectos/Dogs.jpg",
         github: "https://github.com/GCortesGustavo/PI-Dogs-main",
         link: "",
-        tags: ["React", "Node", "Javascript", "SQL"]
+        tags: ["React", "Node", "Javascript", "SQL"],
+        tasks: ["Capturé y rendericé datos de razas de perros", "Creé formulario para creación de perros", "Implementé paginado para ver a los perros"]
     }
 ]
 ---
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-    {PROYECTOS.map(({ title, description, github, image, link, tags }) => (
+    {PROYECTOS.map(({ title, description, github, image, link, tags, tasks }) => (
         <div class="relative group">
             
-            <div class="relative overflow-hidden rounded-xl shadow-lg">
+            <div class="shadow-xl h-full">
+            {/* Contenedor de la imagen y contenido */}
+            <div class="relative overflow-hidden rounded-t-xl shadow-lg transition-all duration-500 transform group-hover:scale-105">
                 <img
                     src={image}
                     alt={`Captura de pantalla de ${title}`}
-                    class="rounded-xl object-cover w-full h-48 sm:h-64 transition-transform duration-500 group-hover:blur-sm group-hover:scale-105"
+                    class="rounded-t-xl object-cover w-full h-48 sm:h-64 transition-transform duration-500 group-hover:scale-110"
                 />
-                <h2 class="absolute bottom-4 left-4 text-white text-xl font-bold z-10 bg-slate-950/50 px-2 py-1 rounded">
-                    {title}
-                </h2>
             </div>
 
-            {/* Contenido que aparece al hover */}
-            <div class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl p-4">
-                <p class="text-white text-center text-sm sm:text-base mb-4">{description}</p>
-                <a href={link} target="_blank" class="text-blue-400 text-sm sm:text-base mb-2 underline">Ver Proyecto</a>
-                <a href={github} target="_blank" class="text-blue-400 underline"><GitHub class="size-6" /></a>
-                <ul class="flex mt-4 space-x-2 space-y-2 flex-wrap">
+            {/* Título, Links y Tags debajo de la imagen */}
+            <div class="bg-white rounded-b-xl p-4 text-center ">
+                <h2 class="text-xl font-bold text-gray-900 mb-2">{title}</h2>
+
+                <div class="flex justify-center gap-4 mb-2">
+                    {link && (
+                        <a 
+                            href={link} 
+                            target="_blank" 
+                            class=" text-sm sm:text-base underline "
+                            aria-label="Ir al proyecto">
+                            <Code aria-label="Ir al proyecto" class="size-6 transition-colors duration-300 hover:fill-gray-600" />
+                        </a>
+                    )}
+                    {github && (
+                        <a 
+                            href={github} 
+                            target="_blank" 
+                            class="text-sm sm:text-base "
+                            aria-label="Ir al repositorio del proyecto">
+                            <GitHub aria-label="Ir al repositorio del proyecto" class="size-6 transition-colors duration-300 hover:fill-gray-600" />
+                        </a>
+                    )}
+                </div>
+
+                <ul class="flex justify-center flex-wrap gap-2 mt-2">
                     {tags.map(tag => (
-                        <li class= "text-white font-bold py-1 px-3 rounded-full text-xs sm:text-sm flex items-center justify-center">
+                        <li class="bg-gray-200 text-gray-800 font-semibold py-1 px-2 rounded-full text-xs sm:text-xs">
                             {tag}
                         </li>
                     ))}
                 </ul>
             </div>
+
+            {/* Contenido que aparece al hover: descripción del proyecto */}
+            <div class="absolute w-full h-64 inset-0 bg-black/70 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl p-4">
+                <p class="text-white text-center text-sm sm:text-base mb-4">{description}</p>
+                <ul class="flex flex-wrap justify-center gap-2">
+                {tasks?.map(task => (
+                        <li class="bg-gray-800 text-gray-200 font-semibold py-2 px-4 rounded-full text-xs sm:text-sm shadow-md">
+                            {task}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </div>
         </div>
     ))}
 </div>
