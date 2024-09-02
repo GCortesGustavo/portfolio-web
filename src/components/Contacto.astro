@@ -1,5 +1,9 @@
+---
+import Gmail from "../icons/Gmail.astro";
+---
+
 <div class="max-w-lg mx-auto p-6 rounded-lg shadow-lg border border-gray-200 mt-6 bg-white dark:bg-slate-800 dark:border-slate-700">
-    <form id="form" class="space-y-4">
+    <!-- <form id="form" class="space-y-4">
         <div>
             <label for="from_name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nombre</label>
             <input 
@@ -36,11 +40,14 @@
             id="button" 
             value="Enviar Mensaje" 
             class="w-full py-2 px-4 bg-blue-700 text-white font-semibold rounded-md shadow-sm hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:bg-blue-800 dark:hover:bg-green-600">
-    </form>
+    </form> -->
+    <a href="mailto:gustavocortes934@gmail.com" aria-label="Enviar Mail a Gustavo Cortés" class="flex mx-2 font-bold flex-row justify-center items-center hover:scale-110 transition transform duration-300">
+        <Gmail class="size-14 md:size-16 text-red-600 m-4"/> Envíame un mail
+    </a>
 </div>
 
 
-<script>
+<!-- <script>
     import Swal from 'sweetalert2';
     
     const btn = document.getElementById('button') as HTMLInputElement | null;
@@ -128,4 +135,4 @@ src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script
 
 <script type="text/javascript">
 emailjs.init('xWktyszsoVyTRnRw7')
-</script>
+</script> -->
