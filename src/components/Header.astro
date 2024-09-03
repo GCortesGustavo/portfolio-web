@@ -2,7 +2,7 @@
 import MenuIcon from "../icons/MenuIcon.astro"
 ---
 
-<header class="flex justify-between items-center py-3 w-full mx-auto fixed z-20 shadow-md">
+<header class="flex justify-between items-center py-3 w-full mx-auto fixed z-20 shadow-md bg-white dark:bg-gray-900 text-black dark:text-white">
     <a href="#top"><img 
     class="rounded-full mx-4 object-cover w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-18 lg:h-18"
     src="/yo3D.jpg" 
@@ -30,7 +30,7 @@ import MenuIcon from "../icons/MenuIcon.astro"
     .nav-link {
         border-radius: 10px;
         transition: background-color 0.3s ease, opacity 0.3s ease;
-        opacity: 0.6;
+        opacity: 0.6;        
     }
 
     .nav-link:hover {
@@ -38,10 +38,11 @@ import MenuIcon from "../icons/MenuIcon.astro"
         opacity: 1;
     }
 
-    .dark .nav-link:hover {
-        background-color: rgba(42, 32, 100, 0.6); /* Azul más oscuro en modo oscuro */
+    /* .dark .nav-link:hover {
+        background-color: rgba(42, 32, 100, 0.6);
         opacity: 1;
-    }
+    } */
+    
 </style>
 
 <script>
