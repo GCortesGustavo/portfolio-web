@@ -2,10 +2,45 @@
 import Firebase from "../icons/Firebase.astro";
 import Javascript from "../icons/Javascript.astro";
 import Next from "../icons/Next.astro";
+import React from "../icons/React.astro";
 import Tailwind from "../icons/Tailwind.astro";
+import TypeScript from "../icons/TypeScript.astro";
 ---
 
 <div class="relative flex flex-col items-center justify-center w-full mt-6 space-y-8">
+    
+    <div class="relative h-full w-full bg-white dark:bg-slate-950 p-6 rounded-lg shadow-md border border-solid border-gray-500">
+        <!-- Fondo del gradiente en modo light y dark -->
+        <div class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] dark:[mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+        
+        <h2 class="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-100 relative z-10">Segimed</h2>
+        <span class="text-xs sm:text-sm font-medium text-gray-500 dark:text-gray-400 relative z-10">Pasanría Front-end</span>
+        <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 relative z-10">Enero 2025 - Febrero 2025</p>
+        <a href="https://www.linkedin.com/company/segimed/" class="text-blue-600 dark:text-blue-400 font-medium relative z-10">Linkedin</a>
+        <p class="mt-4 text-sm sm:text-base text-gray-700 dark:text-gray-300 relative z-10">
+            Participé de unas pasantías en Segimed, una startup de seguimiento médico. Formé parte del equipo de desarrollo front-end y colaboré con el maquetado de la web.
+        </p>
+        <h3 class="mt-4 text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-100 relative z-10">Tareas realizadas:</h3>
+        <ul class="list-disc list-inside mt-2 text-sm sm:text-base text-gray-700 dark:text-gray-300 relative z-10">
+            <li>Creé las pantallas correspondientes al flujo de OnBoarding utilizando rutas dinámicas en Next.js.</li>
+            <li>Implementé componentes básicos con shadcn UI y formularios.</li>
+            <li>Diseñe la URL condicionada para que no pueda avanzar el usuario antes de completar el paso anterior.</li>
+            <li>Me aseguré que los botones de navegación se mantengan funcionales a lo largo del flujo.</li>
+            <li>Desarrollé la funcionalidad completa de las Consultas Médicas para que los medicos puedan atender turnos, registrar consultas, etc.</li>
+            <li>El médico puede ver signos vitales, la evolución, exploración física, diagnótico y antecedentes clínicos.</li>
+            <li>Implementé server actions, formularios de consultas, páginas de consultas y redireccionamiento.</li>
+        </ul>
+        <div class="flex flex-row items-center space-x-2 mt-4">
+            <h4 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-100">
+                Tecnologías utilizadas:
+            </h4>
+            <TypeScript class="size-6 hover:scale-105 transition-transform duration-300 transform"/>
+            <Next class="size-6 hover:scale-105 transition-transform duration-300 transform"/>
+            <React class="size-6 hover:scale-105 transition-transform duration-300 transform"/>
+            <Tailwind class="size-6 hover:scale-105 transition-transform duration-300 transform"/>
+        </div>
+    </div>
+    
     
     <div class="relative h-full w-full bg-white dark:bg-slate-950 p-6 rounded-lg shadow-md border border-solid border-gray-500">
         <!-- Fondo del gradiente en modo light y dark -->
