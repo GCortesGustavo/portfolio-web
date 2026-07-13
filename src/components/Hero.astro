@@ -1,95 +1,184 @@
 ---
-import GitHub from "../icons/GitHub.astro"
+import GitHub from "../icons/GitHub.astro";
 import Gmail from "../icons/Gmail.astro";
 import LinkedIn from "../icons/LinkedIn.astro";
-import TikTok from "../icons/TikTok.astro";
 ---
 
-<div class="flex flex-col md:flex-row justify-center items-center gap-x-10 gap-y-8 h-auto mt-10 px-4">
-    <div class="flex flex-col justify-center text-center md:text-left">
-        <h2 class="text-2xl md:text-3xl" >Hola! Soy</h2>
-        <h1 class="font-bold text-5xl md:text-8xl">GUSTAVO.</h1>
-
-        <span id="dynamicText" class="text-lg md:text-xl block min-h-[3rem]" />
-        <div class="mt-5 flex flex-col md:flex-row gap-4 justify-center md:justify-start items-center">
-            <button id="download-cv" class="bg-slate-600 text-white py-2 px-4 rounded-lg hover:bg-slate-800 transition w-[150px]">
-                Descargar CV
-            </button>
-            <button class="bg-transparent border border-slate-400 text-slate-400 py-2 px-4 rounded-lg hover:bg-slate-400 hover:text-white transition w-[150px]">
-                <a href="#proyectos">Ver proyectos</a>
-            </button>
-        </div>
-
-        <div class="flex justify-center md:justify-start space-x-6 mt-8">
-            <a href="https://www.linkedin.com/in/cortes-gustavo/" aria-label="Perfil de LinkedIn de Gustavo Cortes" target="_blank" class="hover:scale-110 transition transform duration-300">
-                <LinkedIn class="w-6 h-6 md:w-8 md:h-8 text-blue-600"/>
-            </a>
-            <a href="https://github.com/GCortesGustavo" target="_blank" aria-label="Perfil de Github de Gustavo Cortes" class="hover:scale-110 transition transform duration-300">
-                <GitHub class="w-6 h-6  md:w-8 md:h-8 text-gray-800"/>
-            </a>
-            <a href="mailto:gustavocortes934@gmail.com" aria-label="Enviar Mail a Gustavo Cortés" class="hover:scale-110 transition transform duration-300">
-                <Gmail class="w-6 h-6 md:w-8 md:h-8 text-red-600"/>
-            </a>
-            <a href="https://www.tiktok.com/@gustimendotech" aria-label="Perfil de Tik Tok de Gustavo Cortes" target="_blank" class="hover:scale-110 transition transform duration-300">
-                <TikTok class="w-8 h-8 text-red-600"/>
-            </a>
-        </div>
-        
+<div
+  class="flex flex-col md:flex-row justify-between items-center gap-x-12 gap-y-10 mt-16 max-w-5xl mx-auto px-4"
+>
+  <div class="flex flex-col text-center md:text-left order-2 md:order-1">
+    <!-- Badge: Verde más oscuro en light, brillante en dark -->
+    <div class="flex justify-center md:justify-start mb-4">
+      <span class="relative flex h-3 w-3 mt-1 mr-2">
+        <span
+          class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"
+        ></span>
+        <span
+          class="relative inline-flex rounded-full h-3 w-3 bg-green-600 dark:bg-green-500"
+        ></span>
+      </span>
+      <span
+        class="text-xs font-bold text-green-700 dark:text-green-400 uppercase tracking-widest"
+      >
+        Disponible para nuevos proyectos
+      </span>
     </div>
-    <div class="flex items-center">
-        <img src="/ABOUT.jpeg" alt="Gustavo Cortés" class="rounded-full object-cover h-[200px] w-[200px] md:h-[300px] md:w-[300px]">
+
+    <!-- "Hola, soy": Gris oscuro en light, blanco transparente en dark -->
+    <h2
+      class="text-xl md:text-2xl text-slate-600 dark:text-white/80 font-medium"
+    >
+      Hola, soy
+    </h2>
+
+    <!-- "GUSTAVO": Gradiente oscuro en light, gradiente blanco en dark -->
+    <h1
+      class="font-black text-6xl md:text-8xl bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-500 dark:from-white dark:to-gray-500 mb-2"
+    >
+      GUSTAVO.
+    </h1>
+
+    <!-- Texto dinámico: Ámbar/Dorado en light, Amarillo brillante en dark -->
+    <div class="flex justify-center md:justify-start items-center gap-2 h-8">
+      <span
+        id="dynamicText"
+        class="text-xl md:text-2xl font-bold text-amber-600 dark:text-yellow-200 tracking-tight"
+      ></span>
+      <span class="w-[2px] h-6 bg-amber-600 dark:bg-yellow-200 animate-pulse"
+      ></span>
     </div>
+
+    <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
+      <button
+        id="download-cv"
+        class="group relative px-6 py-3 font-bold text-white transition-all duration-300 bg-slate-900 dark:bg-slate-800 rounded-xl hover:scale-105 border border-white/10 shadow-lg"
+      >
+        <span class="relative z-10 flex items-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+            ></path><polyline points="7 10 12 15 17 10"></polyline><line
+              x1="12"
+              x2="12"
+              y1="15"
+              y2="3"></line></svg
+          >
+          Descargar CV
+        </span>
+      </button>
+
+      <!-- Link proyectos: Gris oscuro en light -->
+      <a
+        href="#proyectos"
+        class="px-6 py-3 font-bold text-slate-600 dark:text-gray-300 transition-all border border-slate-200 dark:border-white/10 rounded-xl hover:bg-slate-100 dark:hover:bg-white/5"
+      >
+        Ver proyectos
+      </a>
+    </div>
+
+    <!-- Redes sociales: Colores base más visibles -->
+    <div class="flex justify-center md:justify-start space-x-6 mt-10">
+      {
+        [
+          {
+            href: "https://www.linkedin.com/in/cortes-gustavo/",
+            icon: LinkedIn,
+            label: "LinkedIn",
+            color: "text-blue-700 dark:text-blue-400",
+          },
+          {
+            href: "https://github.com/GCortesGustavo",
+            icon: GitHub,
+            label: "GitHub",
+            color: "text-slate-900 dark:text-gray-300",
+          },
+          {
+            href: "mailto:gustavocortes934@gmail.com",
+            icon: Gmail,
+            label: "Gmail",
+            color: "text-red-600 dark:text-red-400",
+          },
+        ].map(({ href, icon: Icon, label, color }) => (
+          <a
+            href={href}
+            target="_blank"
+            aria-label={label}
+            class={`transition-all duration-300 hover:scale-125 ${color}`}
+          >
+            <Icon class="size-7 md:size-8" />
+          </a>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Imagen: Borde oscuro en light -->
+  <div class="relative order-1 md:order-2 group">
+    <div
+      class="absolute inset-0 bg-amber-500/10 dark:bg-yellow-200/20 blur-[80px] rounded-full"
+    >
+    </div>
+    <img
+      src="/ABOUT.jpeg"
+      alt="Gustavo Adolfo Cortés"
+      class="relative z-10 rounded-full object-cover h-[220px] w-[220px] md:h-[350px] md:w-[350px] border-4 border-slate-200 dark:border-white/10 shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:border-amber-500 dark:group-hover:border-yellow-200/30"
+    />
+  </div>
 </div>
 
-<style>
-
-</style>
-
 <script>
-    const typeFunction = async () => {
-        const element = document.getElementById("dynamicText");
+  // Script optimizado
+  const phrases = [
+    "Desarrollador Full Stack",
+    "Especialista en Frontend",
+    "Desarrollador Mobile",
+  ];
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  const element = document.getElementById("dynamicText");
 
-        if (!element) {
-            console.error("Element not found");
-            return; 
-        }
+  function type() {
+    if (!element) return;
+    const current = phrases[phraseIndex];
 
-        const phrases = ["Desarrollador Web Full Stack", "QA Automatizador de Pruebas"];
-        let currentPhrase = 0;
-
-        const typePhrase = async (phrase: string) => {
-            for (let i = 0; i < phrase.length; i++) {
-                element.textContent += phrase[i];
-                await new Promise(resolve => setTimeout(resolve, 100));
-            }
-            await new Promise(resolve => setTimeout(resolve, 2000));
-        };
-
-        const deletePhrase = async () => {
-            if (!element || !element.textContent) return; // Validación adicional
-            while (element.textContent.length > 0) {
-            element.textContent = element.textContent.slice(0, -1);
-            await new Promise(resolve => setTimeout(resolve, 50));
-        }
-        };
-
-        while (true) {
-            await typePhrase(phrases[currentPhrase]);
-            await deletePhrase();
-            currentPhrase = (currentPhrase + 1) % phrases.length;
-        }
-    };
-
-    window.onload = typeFunction;
-
-    const downloadCV = () => {
-        const link = document.createElement("a")
-        link.href="/GUSTAVO-CORTES-CV-FS.pdf"
-        link.download="GUSTAVO-CORTES-CV-FS.pdf"
-        document.body.appendChild(link)
-        link.click()
-        document.body.removeChild(link);
+    if (isDeleting) {
+      element.textContent = current.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      element.textContent = current.substring(0, charIndex + 1);
+      charIndex++;
     }
 
-    document.getElementById("download-cv")?.addEventListener('click', downloadCV);
+    let typeSpeed = isDeleting ? 50 : 100;
+
+    if (!isDeleting && charIndex === current.length) {
+      typeSpeed = 2000;
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      typeSpeed = 500;
+    }
+
+    setTimeout(type, typeSpeed);
+  }
+
+  document.addEventListener("DOMContentLoaded", type);
+
+  document.getElementById("download-cv")?.addEventListener("click", () => {
+    const link = document.createElement("a");
+    link.href = "/Gustavo-Cortes-CV.docx.pdf";
+    link.download = "Gustavo-Adolfo-Cortes-CV.pdf";
+    link.click();
+  });
 </script>

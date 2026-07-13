@@ -1,71 +1,47 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from "../components/Hero.astro"
-import About from "../components/About.astro"
-import SectionContainer from '../components/SectionContainer.astro';
-import TitleSection from '../components/TitleSection.astro';
-import Tecnologias from '../components/Tecnologias.astro';
-import Proyectos from '../components/Proyectos.astro';
-import Contacto from '../components/Contacto.astro';
-import Experiencia from '../components/Experiencia.astro';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import TitleSection from "../components/TitleSection.astro";
+import Tecnologias from "../components/Tecnologias.astro";
+import Proyectos from "../components/Proyectos.astro";
+import Contacto from "../components/Contacto.astro";
+import Experiencia from "../components/Experiencia.astro";
 ---
 
-<Layout title="Gustavo Cortes" description='Desarrollador y programador web full stack'>
-	<main class="px-4">
-		<SectionContainer class="mt-48 mb-36 min-h-screen">
-			<Hero />
-			</slot>
-		</SectionContainer>
-		
-		<SectionContainer id="sobre-mi" class="flex-col min-h-screen items-center justify-center mb-36">
-			<TitleSection >
-				Sobre mí
-			</TitleSection>
-			<About />
-		</SectionContainer>
+<Layout
+  title="Gustavo Adolfo Cortés | Full Stack Developer"
+  description="Desarrollador Full Stack orientado a Frontend y Mobile. Especialista en React, Next.js y TypeScript."
+>
+  <main class="space-y-24 py-20">
+    <SectionContainer id="inicio">
+      <Hero />
+    </SectionContainer>
 
-		<SectionContainer class="mb-36 min-h-screen" id="tecnologias">
-			<TitleSection >
-				Tecnologías
-			</TitleSection>
-			<Tecnologias />
-		</SectionContainer>
+    <SectionContainer id="sobre-mi">
+      <TitleSection>Sobre mí</TitleSection>
+      <About />
+    </SectionContainer>
 
-		<SectionContainer class="mb-36" id="proyectos">
-			<TitleSection >
-				Proyectos
-			</TitleSection>
-			<Proyectos />
-		</SectionContainer>
+    <SectionContainer id="tecnologias">
+      <TitleSection>Tecnologías</TitleSection>
+      <Tecnologias />
+    </SectionContainer>
 
+    <SectionContainer id="proyectos">
+      <TitleSection>Proyectos</TitleSection>
+      <Proyectos />
+    </SectionContainer>
 
-		<SectionContainer class="mb-36" id="experiencia">
-			<TitleSection>
-				Experiencia
-			</TitleSection>
-			<Experiencia />
-		</SectionContainer>
+    <SectionContainer id="experiencia">
+      <TitleSection>Experiencia Profesional</TitleSection>
+      <Experiencia />
+    </SectionContainer>
 
-		<SectionContainer id="contacto">
-			<TitleSection>
-				Contacto
-			</TitleSection>
-			<Contacto />
-		</SectionContainer>
-	</main>
+    <SectionContainer id="contacto">
+      <TitleSection>Contacto</TitleSection>
+      <Contacto />
+    </SectionContainer>
+  </main>
 </Layout>
-
-<style>
-
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-
-
-</style>

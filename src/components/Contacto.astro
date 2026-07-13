@@ -1,138 +1,167 @@
 ---
 import Gmail from "../icons/Gmail.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
 ---
 
-<div class="max-w-lg mx-auto p-6 rounded-lg shadow-lg border border-gray-200 mt-6 bg-white dark:bg-slate-800 dark:border-slate-700">
-    <!-- <form id="form" class="space-y-4">
-        <div>
-            <label for="from_name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nombre</label>
-            <input 
-                type="text"
-                placeholder="Escribe tu nombre" 
-                name="from_name" 
-                id="from_name"
-                class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-white dark:bg-slate-700 dark:border-slate-600 text-black dark:text-gray-300"
-                />
-        </div>
-        <div>
-            <label for="email_id" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Correo Electrónico</label>
-            <input 
-                type="text" 
-                placeholder="Escribe tu correo electrónico"
-                name="email_id" 
-                id="email_id"
-                class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-white dark:bg-slate-700 dark:border-slate-600 text-black dark:text-gray-300"
-                />
-        </div>
-        <div>
-            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Mensaje</label>
-            <textarea
-                placeholder="Escribe tu mensaje!"
-                name="message"
-                id="message"
-                rows="4" 
-                class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-white dark:bg-slate-700 dark:border-slate-600 text-black dark:text-gray-300"
-            ></textarea>
-        </div>
-        
-        <input 
-            type="submit" 
-            id="button" 
-            value="Enviar Mensaje" 
-            class="w-full py-2 px-4 bg-blue-700 text-white font-semibold rounded-md shadow-sm hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:bg-blue-800 dark:hover:bg-green-600">
-    </form> -->
-    <a href="mailto:gustavocortes934@gmail.com" aria-label="Enviar Mail a Gustavo Cortés" class="flex mx-2 font-bold flex-row justify-center items-center hover:scale-110 transition transform duration-300">
-        <Gmail class="size-14 md:size-16 text-red-600 m-4"/> Envíame un mail
-    </a>
-</div>
+<section class="max-w-4xl mx-auto mt-16 px-4 pb-20">
+  <div
+    class="grid md:grid-cols-2 gap-12 bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 p-8 rounded-3xl backdrop-blur-sm shadow-xl dark:shadow-2xl"
+  >
+    <!-- Lado Izquierdo: Info de contacto -->
+    <div class="flex flex-col justify-center space-y-6">
+      <h2 class="text-3xl font-bold text-white tracking-tight">
+        ¿Tienes un proyecto en mente? <span class="text-amber-700"
+          >Hablemos.</span
+        >
+      </h2>
+      <p class="text-gray-400 text-pretty">
+        Estoy disponible para trabajos como freelance o posiciones Full Stack.
+        Si buscas a alguien que cuide tanto el código como la experiencia de
+        usuario, envíame un mensaje.
+      </p>
 
+      <div class="space-y-4 pt-4">
+        <a
+          href="mailto:gustavocortes934@gmail.com"
+          class="flex items-center gap-4 text-slate-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-yellow-200 transition-colors group"
+        >
+          <div
+            class="p-3 bg-white/5 rounded-xl group-hover:bg-yellow-200/10 transition-colors"
+          >
+            <Gmail class="size-6 text-red-500" />
+          </div>
+          <span class="font-medium">gustavocortes934@gmail.com</span>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/cortes-gustavo/"
+          target="_blank"
+          class="flex items-center gap-4 text-slate-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-yellow-200 transition-colors group"
+        >
+          <div
+            class="p-3 bg-white/5 rounded-xl group-hover:bg-yellow-200/10 transition-colors"
+          >
+            <LinkedIn class="size-6 text-blue-500" />
+          </div>
+          <span class="font-medium">linkedin.com/in/cortes-gustavo</span>
+        </a>
+      </div>
+    </div>
 
-<!-- <script>
-    import Swal from 'sweetalert2';
-    
-    const btn = document.getElementById('button') as HTMLInputElement | null;
-    const form = document.getElementById('form') as HTMLFormElement | null;
+    <!-- Lado Derecho: Formulario -->
+    <form id="contact-form" class="flex flex-col gap-y-4">
+      <div class="flex flex-col gap-1">
+        <label
+          class="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-gray-500 ml-1"
+          >Nombre</label
+        >
+        <input
+          required
+          type="text"
+          name="from_name"
+          id="from_name"
+          placeholder="Tu nombre"
+          class="w-full p-4 bg-white dark:bg-white/5 border border-slate-300 dark:border-white/10 rounded-2xl text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/20 focus:outline-none focus:border-amber-500 dark:focus:border-yellow-200/50 transition-all"
+        />
+      </div>
 
-    const validateEmail = (email: string) => {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(String(email).toLowerCase());
-    };
+      <div class="flex flex-col gap-1">
+        <label
+          for="email_id"
+          class="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-gray-500 ml-1"
+          >Email</label
+        >
+        <input
+          required
+          type="email"
+          name="email_id"
+          id="email_id"
+          placeholder="tu@email.com"
+          class="w-full p-4 bg-white dark:bg-white/5 border border-slate-300 dark:border-white/10 rounded-2xl text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/20 focus:outline-none focus:border-amber-500 dark:focus:border-yellow-200/50 transition-all"
+        />
+      </div>
 
-    if (form && btn) {
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const fromName = (document.getElementById('from_name') as HTMLInputElement).value.trim();
-            const emailId = (document.getElementById('email_id') as HTMLInputElement).value.trim();
-            const message = (document.getElementById('message') as HTMLTextAreaElement).value.trim();
+      <div class="flex flex-col gap-1">
+        <label
+          for="message"
+          class="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-gray-500 ml-1"
+          >Mensaje</label
+        >
+        <textarea
+          required
+          name="message"
+          id="message"
+          rows="4"
+          placeholder="¿En qué puedo ayudarte?"
+          class="w-full p-4 bg-white dark:bg-white/5 border border-slate-300 dark:border-white/10 rounded-2xl text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/20 focus:outline-none focus:border-amber-500 dark:focus:border-yellow-200/50 transition-all resize-none"
+        ></textarea>
+      </div>
 
-            // Validaciones
-            if (fromName.length < 3) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: 'El nombre debe tener al menos 3 caracteres.',
-                    confirmButtonColor: '#d33',
-                    confirmButtonText: 'Ok'
-                });
-                return;
-            }
+      <button
+        type="submit"
+        id="submit-btn"
+        class="mt-2 w-full py-4 bg-slate-900 dark:bg-yellow-200 text-white dark:text-slate-950 font-bold rounded-2xl hover:bg-slate-800 dark:hover:bg-yellow-300 transition-all active:scale-95 disabled:opacity-50"
+      >
+        Enviar Mensaje
+      </button>
+    </form>
+  </div>
+</section>
 
-            if (!validateEmail(emailId)) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: 'El correo electrónico no es válido.',
-                    confirmButtonColor: '#d33',
-                    confirmButtonText: 'Ok'
-                });
-                return;
-            }
+<script>
+  import emailjs from "@emailjs/browser";
+  import Swal from "sweetalert2";
 
-            if (message === '') {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: 'El mensaje no puede estar vacío.',
-                    confirmButtonColor: '#d33',
-                    confirmButtonText: 'Ok'
-                });
-                return;
-            }
+  emailjs.init("xWktyszsoVyTRnRw7");
 
-            // Si las validaciones pasan, enviar el formulario
-            btn.value = 'Enviando...';
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const btn = document.getElementById("submit-btn") as HTMLButtonElement;
 
-            const serviceID = 'default_service';
-            const templateID = 'template_d6qt47k';
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
 
-            emailjs.sendForm(serviceID, templateID, form)
-                .then(() => {
-                    btn.value = 'Enviar Mensaje';
-                    Swal.fire({
-                        icon: 'success',
-                        title: '¡Mensaje enviado!',
-                        text: 'Tu mensaje ha sido enviado correctamente.',
-                        confirmButtonColor: '#3085d6',
-                        confirmButtonText: 'Ok'
-                    });
-                    form.reset()
-                }, (err: any) => {
-                    btn.value = 'Enviar Mensaje';
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Error',
-                        text: `Hubo un problema: ${JSON.stringify(err)}`,
-                        confirmButtonColor: '#d33',
-                        confirmButtonText: 'Ok'
-                    });
-                });
+      btn.disabled = true;
+      btn.innerText = "Enviando...";
+
+      // Detectamos si el usuario está en modo oscuro para el SweetAlert
+      const isDark = document.documentElement.classList.contains("dark");
+
+      try {
+        await emailjs.sendForm("service_6pyacme", "template_3m6oyyr", form);
+
+        Swal.fire({
+          icon: "success",
+          title: "¡Mensaje enviado!",
+          text: "Gracias por contactar, Gustavo te responderá pronto.",
+          background: isDark ? "#0f172a" : "#fff",
+          color: isDark ? "#fff" : "#0f172a",
+          confirmButtonColor: isDark ? "#fef08a" : "#0f172a", // Amarillo en dark, oscuro en light
+          confirmButtonText: `<span style="color: ${isDark ? "#020617" : "#fff"}">Genial</span>`,
         });
-    }
+
+        form.reset();
+      } catch (error) {
+        console.error("EmailJS Error:", error);
+        Swal.fire({
+          icon: "error",
+          title: "Ops...",
+          text: "Hubo un error al enviar. Revisa tu conexión o inténtalo más tarde.",
+          background: isDark ? "#0f172a" : "#fff",
+          color: isDark ? "#fff" : "#0f172a",
+          confirmButtonColor: "#ef4444",
+        });
+      } finally {
+        btn.disabled = false;
+        btn.innerText = "Enviar Mensaje";
+      }
+    });
+  }
 </script>
 
-<script type="text/javascript"
-src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script type="text/javascript">
-emailjs.init('xWktyszsoVyTRnRw7')
-</script> -->
+<style>
+  /* Personalización básica de SweetAlert para que no rompa la estética dark */
+  .swal2-popup {
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 1.5rem !important;
+  }
+</style>

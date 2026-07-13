@@ -1,70 +1,93 @@
 ---
-import Firebase from "../icons/Firebase.astro";
-import Javascript from "../icons/Javascript.astro";
 import Next from "../icons/Next.astro";
 import Tailwind from "../icons/Tailwind.astro";
+import Firebase from "../icons/Firebase.astro";
+import Javascript from "../icons/Javascript.astro";
+import React from "../icons/React.astro";
+
+const EXPERIENCIA = [
+    {
+        date: "Mayo 2025 – Septiembre 2025",
+        title: "Desarrollador Frontend & Mobile",
+        company: "SyroxTech",
+        description: "Diseño y desarrollo del flujo completo de onboarding y autenticación para aplicaciones móviles. Gestión de estado global para optimizar el rendimiento.",
+        link: "",
+        badges: ["React Native", "TypeScript"]
+    },
+    {
+        date: "Enero 2025 – Febrero 2025",
+        title: "Desarrollador Frontend (Pasantía)",
+        company: "Segimed",
+        description: "Desarrollo de funcionalidades para gestión de consultas médicas. Refactorización de módulos para mejorar la mantenibilidad de la plataforma.",
+        link: "",
+        badges: ["React", "Next.js"]
+    },
+    {
+        date: "Septiembre 2024 – Actualidad",
+        title: "Desarrollador WordPress",
+        company: "Cáritas Mendoza",
+        description: "Gestión integral del sitio web oficial: SEO, hosting y dominio. Optimización de rendimiento y disponibilidad.",
+        link: "https://caritasmendoza.org.ar",
+        badges: ["WordPress", "SEO"]
+    },
+    {
+        date: "Febrero 2024 – Mayo 2024",
+        title: "Full Stack Developer",
+        company: "LFT (Somos Jardín Web)",
+        description: "Plataforma E-Learning con sistema de comentarios y envíos automatizados de correos (NodeMailer). Automatización de usuarios.",
+        link: "https://somos-jardinweb.vercel.app/",
+        badges: ["Next.js", "Firebase", "NodeMailer"]
+    },
+    {
+        date: "Febrero 2022 – Actualidad",
+        title: "Desarrollador Web & RRHH",
+        company: "Grupo Cioffi",
+        description: "Desarrollo de sistema interno de gestión de materiales y personal. Reducción del tiempo administrativo en un 20%.",
+        link: "",
+        badges: ["Javascript", "Excel Automation", "Dashboards"]
+    }
+]
 ---
 
-<div class="relative flex flex-col items-center justify-center w-full mt-6 space-y-8">
-    
-    <div class="relative h-full w-full bg-white dark:bg-slate-950 p-6 rounded-lg shadow-md border border-solid border-gray-500">
-        <!-- Fondo del gradiente en modo light y dark -->
-        <div class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] dark:[mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-        
-        <h2 class="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-100 relative z-10">Somos Jardín Web</h2>
-        <span class="text-xs sm:text-sm font-medium text-gray-500 dark:text-gray-400 relative z-10">Proyecto Freelance</span>
-        <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 relative z-10">Febrero 2024 - Junio 2024</p>
-        <a href="https://somos-jardinweb.vercel.app/" class="text-blue-600 dark:text-blue-400 font-medium relative z-10">Link a la web</a>
-        <p class="mt-4 text-sm sm:text-base text-gray-700 dark:text-gray-300 relative z-10">
-            Desarrollé en conjunto a un equipo de desarrollo una plataforma E-Learning para una profesora de nivel inicial que crea contenido en redes sociales.
-        </p>
-        <h3 class="mt-4 text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-100 relative z-10">Tareas realizadas:</h3>
-        <ul class="list-disc list-inside mt-2 text-sm sm:text-base text-gray-700 dark:text-gray-300 relative z-10">
-            <li>Desarrollé e implementé la creación automatizada de usuarios con perfil “Alumno” utilizando Javascript y Firebase.</li>
-            <li>Diseñé y optimicé una tabla dinámica de ventas utilizando Javascript.</li>
-            <li>Construí landing pages para la promoción de cursos con Tailwind CSS.</li>
-            <li>Desarrollé una zona interactiva de comentarios con Javascript y Firebase.</li>
-            <li>Implementé un sistema automatizado de envío de correos con NodeMailer y Javascript.</li>
-        </ul>
-        <div class="flex flex-row items-center space-x-2 mt-4">
-            <h4 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-100">
-                Tecnologías utilizadas:
-            </h4>
-            <Next class="size-6 hover:scale-105 transition-transform duration-300 transform"/>
-            <Tailwind class="size-6 hover:scale-105 transition-transform duration-300 transform"/>
-            <Firebase class="size-6 hover:scale-105 transition-transform duration-300 transform"/>
-            <Javascript class="size-6 hover:scale-105 transition-transform duration-300 transform"/>
-        </div>
-    </div>
+<ol class="relative border-s border-white/10 ml-3 md:ml-0">                  
+    {EXPERIENCIA.map((exp) => (
+        <li class="mb-10 ms-6 group">
+            <!-- Circulo del Timeline -->
+            <span class="absolute flex items-center justify-center w-6 h-6 bg-yellow-200/20 rounded-full -start-3 ring-8 ring-slate-950 group-hover:bg-yellow-200 transition-colors duration-300">
+                <svg class="w-2.5 h-2.5 text-amber-700 group-hover:text-slate-900 transition-colors" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                </svg>
+            </span>
 
-    
-    <div class="relative h-full w-full bg-white dark:bg-slate-950 p-6 rounded-lg shadow-md mt-8 border border-solid border-gray-500">
-        
-        <div class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] dark:[mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-        
-        <h2 class="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-100 relative z-10">Grupo Cioffi</h2>
-        <span class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 relative z-10">Proyecto Freelance y RRHH</span>
-        <p class="text-xs sm:text-sm dark:text-gray-300 relative z-10">2022 - Actualidad</p>
-        <p class="mt-4 text-sm sm:text-base text-gray-700 dark:text-gray-300 relative z-10">
-            Grupo Cioffi es un grupo económico que gestiona la construcción de edificios y alquileres.Desarrollé un sistema para gestión de compras de materiales y control de empleados.Además, en ella participo en el área de Recursos Humanos, Administración y Cobranzas.  
-        </p>
-        <h3 class="mt-4 text-lg sm:text-lg font-semibold text-gray-800 dark:text-gray-100 relative z-10">Tareas realizadas:</h3>
-        <ul class="list-disc list-inside sm:text-base mt-2 text-gray-700 dark:text-gray-300 relative z-10">
-            <li>Desarrolé un dashboard para ingresar a la gestión de los edificios.</li>
-            <li>Diseñé y optimicé una tabla dinámica de ventas y empleados utilizando Javascript.</li>
-            <li>Implementé un login con credenciales únicas para los encargados de edificios. Cada uno tiene un rol distinto dentro del software.</li>
-            <li>Control y gestión del personal de las empresas.</li>
-            <li>Encargado de las cobranzas a proveedores que realizan publicidad en radio.</li>
-        </ul>
+            <div class="relative p-6 bg-white/5 rounded-2xl border border-white/10 hover:border-white/20 transition-all shadow-xl overflow-hidden group-hover:-translate-y-1">
+                <!-- Fondo de rejilla sutil (Grid) -->
+                <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                    <h3 class="text-xl font-bold text-amber-700 dark:text-yellow-200">{exp.title}</h3>
+                    <time class="text-sm font-mono text-slate-500 dark:text-white/50">{exp.date}</time>
+                </div>
 
-        <div class="flex flex-row items-center space-x-2 mt-4">
-            <h4 class="text-lg font-semibold sm:text-lg text-gray-800 dark:text-gray-100">
-                Tecnologías utilizadas:
-            </h4>
-            <Next class="size-6 hover:scale-105 transition-transform duration-300 transform"/>
-            <Tailwind class="size-6 hover:scale-105 transition-transform duration-300 transform"/>
-            <Firebase class="size-6 hover:scale-105 transition-transform duration-300 transform"/>
-            <Javascript class="size-6 hover:scale-105 transition-transform duration-300 transform"/>
-        </div>
-    </div>
-</div>
+                <h4 class="text-lg font-semibold text-white/80 mb-3">{exp.company}</h4>
+                
+                <p class="mb-4 text-base font-normal text-gray-400 text-pretty">
+                    {exp.description}
+                </p>
+
+                {exp.link && (
+                    <a href={exp.link} target="_blank" class="inline-flex items-center px-4 py-2 text-xs font-bold text-white bg-white/10 border border-white/10 rounded-lg hover:bg-white/20 transition-colors mb-4">
+                        Visitar proyecto <svg class="w-3 h-3 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/></svg>
+                    </a>
+                )}
+
+                <div class="flex flex-wrap gap-2">
+                    {exp.badges.map(badge => (
+                        <span class="px-2 py-1 text-[10px] font-black uppercase tracking-tighter bg-amber-700/10 text-amber-700/80 rounded border border-amber-700/20">
+                            {badge}
+                        </span>
+                    ))}
+                </div>
+            </div>
+        </li>
+    ))}
+</ol>

@@ -1,61 +1,115 @@
 ---
-import MenuIcon from "../icons/MenuIcon.astro"
+import MenuIcon from "../icons/MenuIcon.astro";
+import ThemeToggle from "../icons/ThemeToggle.astro";
 ---
 
-<header class="flex justify-between items-center py-3 w-full mx-auto fixed z-20 shadow-md bg-white dark:bg-gray-900 text-black dark:text-white">
-    <a href="#top"><img 
-    class="rounded-full mx-4 object-cover w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-18 lg:h-18"
-    src="/yo3D.jpg" 
-    alt="Logo">
-</a>
+<header
+  class="fixed top-0 z-50 w-full flex justify-center items-center py-4 px-4 transition-all"
+>
+  <nav
+    class="flex justify-between items-center w-full max-w-5xl px-4 py-2 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200 dark:border-white/10 shadow-lg"
+  >
+    <a
+      href="#inicio"
+      class="flex items-center gap-2 hover:scale-105 transition"
+    >
+      <img
+        class="rounded-full object-cover w-10 h-10 border border-slate-200 dark:border-white/20"
+        src="/yo3D.jpg"
+        alt="Logo"
+      />
+      <span class="font-bold text-sm hidden sm:block">Gustavo.dev</span>
+    </a>
 
-        <!-- Menú hamburguesa para móviles -->
-    <div class="flex lg:hidden mx-4">
-        <button id="menu-toggle">
-        <MenuIcon class="w-8 h-8 fill-current text-gray-800 dark:text-white" />
-        </button>
+    <!-- Navegación Escritorio -->
+    <div class="hidden lg:flex items-center gap-x-2">
+      <a href="#inicio" class="nav-link">Inicio</a>
+      <a href="#sobre-mi" class="nav-link">Sobre mí</a>
+      <a href="#tecnologias" class="nav-link">Tecnologías</a>
+      <a href="#proyectos" class="nav-link">Proyectos</a>
+      <a href="#experiencia" class="nav-link">Experiencia</a>
+      <a href="#contacto" class="nav-link">Contacto</a>
+
+      <div class="w-px h-4 bg-slate-300 dark:bg-white/20 mx-2"></div>
+
+      <button
+        id="theme-toggle"
+        class="p-2 transition hover:scale-110 text-slate-700 dark:text-yellow-200"
+      >
+        <ThemeToggle />
+      </button>
     </div>
 
-    <nav id="menu" class="hidden lg:flex flex-row gap-x-4 opacity-90">
-        <a href="#top" class="nav-link">Inicio</a>
-        <a href="#sobre-mi" class="nav-link">Sobre mí</a>
-        <a href="#tecnologias" class="nav-link">Tecnologías</a>
-        <a href="#proyectos" class="nav-link">Proyectos</a>
-        <a href="#experiencia" class="nav-link">Experiencia</a>
-        <a href="#contacto" class="nav-link">Contacto</a>
-    </nav>
+    <!-- Menú Móvil & Theme Toggle Móvil -->
+    <div class="flex lg:hidden items-center gap-2">
+      <button
+        id="theme-toggle-mobile"
+        class="p-2 text-slate-700 dark:text-yellow-200"
+      >
+        <ThemeToggle />
+      </button>
+      <button id="menu-toggle" class="p-2">
+        <MenuIcon class="w-7 h-7 text-slate-800 dark:text-white" />
+      </button>
+    </div>
+  </nav>
+
+  <!-- Menú Desplegable Móvil -->
+  <div
+    id="mobile-menu"
+    class="hidden absolute top-20 left-4 right-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 rounded-3xl p-6 shadow-2xl flex-col gap-4 text-center font-bold"
+  >
+    <a href="#inicio" class="mobile-nav-link">Inicio</a>
+    <a href="#sobre-mi" class="mobile-nav-link">Sobre mí</a>
+    <a href="#tecnologias" class="mobile-nav-link">Tecnologías</a>
+    <a href="#proyectos" class="mobile-nav-link">Proyectos</a>
+    <a href="#experiencia" class="mobile-nav-link">Experiencia</a>
+    <a href="#contacto" class="mobile-nav-link">Contacto</a>
+  </div>
 </header>
 
 <style>
-    .nav-link {
-        border-radius: 10px;
-        transition: background-color 0.3s ease, opacity 0.3s ease;
-        opacity: 0.6;        
-    }
-
-    .nav-link:hover {
-        background-color: rgba(173, 216, 230, 0.6); /* Celeste pastel con opacidad */
-        opacity: 1;
-    }
-
-    /* .dark .nav-link:hover {
-        background-color: rgba(42, 32, 100, 0.6);
-        opacity: 1;
-    } */
-    
+  .nav-link {
+    @apply px-3 py-1.5 rounded-full text-xs font-semibold opacity-70 transition-all hover:opacity-100 hover:bg-slate-100 dark:hover:bg-white/10 hover:text-amber-600 dark:hover:text-yellow-200;
+  }
+  .mobile-nav-link {
+    @apply py-3 text-lg border-b border-slate-100 dark:border-white/5 last:border-0;
+  }
 </style>
 
 <script>
-    const menuToggle = document.getElementById("menu-toggle");
-    const menu = document.getElementById("menu");
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const themeButtons = [
+    document.getElementById("theme-toggle"),
+    document.getElementById("theme-toggle-mobile"),
+  ];
 
-    menuToggle?.addEventListener("click", () => {
-        if (menu?.classList.contains("hidden")) {
-        menu?.classList.remove("hidden");
-        menu.classList.add("flex", "flex-col", "absolute", "top-16", "right-0", "w-2/3", "bg-white", "dark:bg-slate-800", "shadow-lg", "p-4", "gap-y-4");
-        } else {
-        menu?.classList.add("hidden");
-        menu?.classList.remove("flex", "flex-col", "absolute", "top-16", "right-0", "w-2/3", "bg-white", "dark:bg-slate-800", "shadow-lg", "p-4", "gap-y-4");
-        }
+  // Toggle Menú
+  menuToggle?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("hidden");
+    mobileMenu?.classList.toggle("flex");
+  });
+
+  // Cerrar menú al clickear un link
+  mobileMenu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu?.classList.add("hidden");
+      mobileMenu?.classList.remove("flex");
     });
+  });
+
+  // Lógica Theme Toggle (centralizada)
+  themeButtons.forEach((btn) => {
+    btn?.addEventListener("click", () => {
+      const isDark = document.documentElement.classList.contains("dark");
+      if (isDark) {
+        document.documentElement.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+      } else {
+        document.documentElement.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+      }
+    });
+  });
 </script>

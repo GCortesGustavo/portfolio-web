@@ -1,12 +1,11 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro'
-// Supports weights 300-900
-import '@fontsource-variable/recursive';
-import ThemeToggle from '../icons/ThemeToggle.astro';
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "@fontsource-variable/recursive";
+
 interface Props {
-	title: string;
-	description: string
+  title: string;
+  description: string;
 }
 
 const { title, description } = Astro.props;
@@ -14,117 +13,73 @@ const { title, description } = Astro.props;
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/yo3D.jpg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/yo3D.jpg" />
+    <title>{title}</title>
 
+    <!-- Script crítico para evitar parpadeos de tema -->
+    <script is:inline>
+      const getTheme = () => {
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem("theme")
+        ) {
+          return localStorage.getItem("theme");
+        }
+        return window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+      };
+      const theme = getTheme();
+      if (theme === "dark") document.documentElement.classList.add("dark");
+      else document.documentElement.classList.remove("dark");
+    </script>
+  </head>
 
-	</head>
-	<body class="light relative">
-		<div class="absolute top-0 z-[-2] h-full w-full bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)] dark:hidden"></div>
-		<div class="absolute top-0 z-[-2] h-full w-full bg-slate-950 bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)] hidden dark:block"></div>
+  <body
+    class="relative text-slate-900 dark:text-white bg-white dark:bg-slate-950 transition-colors duration-300"
+  >
+    <!-- Fondo dinámico Light -->
+    <div
+      class="absolute top-0 z-[-2] h-full w-full bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.08)_0,rgba(0,163,255,0)_50%)] dark:hidden"
+    >
+    </div>
 
-		<Header />
+    <!-- Fondo dinámico Dark -->
+    <div
+      class="absolute top-0 z-[-2] h-full w-full hidden dark:block bg-slate-950 bg-[radial-gradient(circle_farthest-side_at_50%_-100px,#1e293b,transparent)]"
+    >
+    </div>
 
-		<button id="theme-toggle" class="flex items-center justify-center theme-toggle-button top-4 mt-20 right-4 p-2  dark:bg-gray-50 rounded-full fixed" aria-label="Alternar tema" title="Alternar tema">
-			<ThemeToggle />
-		</button>
+    <Header />
 
-		<slot />
-		<Footer />
-		<script>
-			const toggleButton = document.getElementById("theme-toggle")
-			const currentTheme = localStorage.getItem("theme") || "light"
-			document.body.classList.add(currentTheme)
+    <main class="max-w-6xl mx-auto">
+      <slot />
+    </main>
 
-			toggleButton?.addEventListener("click", () => {
-				const newTheme = document.body.classList.contains("light") ? "dark" : "light"
-				document.body.classList.remove("light", "dark")
-				document.body.classList.add(newTheme)
-				localStorage.setItem("theme", newTheme)
-			})
-		</script>
-	</body>
+    <Footer />
+  </body>
 </html>
 
-
-
-
 <style is:global>
-	:root {
-		--font-family-primary: 'Recursive Variable', sans-serif;
-		color-scheme: light dark;
-	}
-
-	html {
-		font-family: var(--font-family-primary);
-		scroll-behavior: smooth;
-	}
-
-	body {
-		font-family: var(--font-family-primary);
-		color: rgba(17, 17, 17, 0.9);
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        overscroll-behavior: none;
-		background-color: white;
-		transition: background-color 0.3s, color 0.3s;
-	}
-
-	body.dark {
-		background-color: #121212;
-		color: rgba(255, 255, 255, 0.9);
-	}
-
-	button {
-		cursor: pointer;
-	}
-
-	/* Responsive Theme Toggle Button */
-	.theme-toggle-button {
-		width: 48px;
-		height: 48px;
-		transition: all 0.3s ease-in-out;
-	}
-
-	@media (max-width: 768px) {
-		.theme-toggle-button {
-			width: 40px;
-			height: 40px;
-			top: 1rem;
-			right: 1rem;
-		}
-	}
-
-	@media (max-width: 480px) {
-		.theme-toggle-button {
-			width: 36px;
-			height: 36px;
-			top: 0.5rem;
-			right: 0.5rem;
-		}
-	}
-
-    /* Enlaces */
-	.nav-link {
-        padding: 10px 20px;
-        border-radius: 10px;
-        transition: background-color 0.3s ease, opacity 0.3s ease;
-        opacity: 0.6;
-    }
-
-    .nav-link:hover {
-        background-color: rgba(173, 216, 230, 0.6); /* Celeste pastel en modo claro */
-        opacity: 1;
-    }
-
-    .dark .nav-link:hover {
-        background-color: rgba(11, 3, 122, 0.6); /* Azul más oscuro en modo oscuro */
-        opacity: 1;
-    }
+  :root {
+    --font-family-primary: "Recursive Variable", sans-serif;
+  }
+  html {
+    font-family: var(--font-family-primary);
+    scroll-behavior: smooth;
+  }
+  /* Ocultar barra de scroll pero mantener funcionalidad */
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  /* Mejora de selección de texto */
+  ::selection {
+    background-color: #fef08a; /* yellow-200 */
+    color: #000;
+  }
 </style>

@@ -1,127 +1,92 @@
 ---
-import AstroIcon from "../icons/AstroIcon.astro"
-import CSS from "../icons/CSS.astro"
-import Cypress from "../icons/Cypress.astro"
-import Figma from "../icons/Figma.astro"
-import Firebase from "../icons/Firebase.astro"
-import Git from "../icons/Git.astro"
-import GitHub from "../icons/GitHub.astro"
-import Iconhtml from "../icons/Iconhtml.astro"
-import Javascript from "../icons/Javascript.astro"
-import Next from "../icons/Next.astro"
-import Node from "../icons/Node.astro"
-import Playwright from "../icons/Playwright.astro"
-import PostgreeSQL from "../icons/PostgreeSQL.astro"
-import React from "../icons/React.astro"
-import Sequelize from "../icons/Sequelize.astro"
-import Svelte from "../icons/Svelte.astro"
-import Tailwind from "../icons/Tailwind.astro"
-import TypeScript from "../icons/TypeScript.astro"
-import VisualStudio from "../icons/VisualStudio.astro"
-import Vue from "../icons/Vue.astro"
+import CSS from "../icons/CSS.astro";
+import Figma from "../icons/Figma.astro";
+import Firebase from "../icons/Firebase.astro";
+import Git from "../icons/Git.astro";
+import GitHub from "../icons/GitHub.astro";
+import Iconhtml from "../icons/Iconhtml.astro";
+import Javascript from "../icons/Javascript.astro";
+import Next from "../icons/Next.astro";
+import Node from "../icons/Node.astro";
+import Playwright from "../icons/Playwright.astro";
+import PostgreeSQL from "../icons/PostgreeSQL.astro";
+import React from "../icons/React.astro";
+import Sequelize from "../icons/Sequelize.astro";
+import Tailwind from "../icons/Tailwind.astro";
+import TypeScript from "../icons/TypeScript.astro";
+import VisualStudio from "../icons/VisualStudio.astro";
+
+// Definimos los grupos de tecnologías para que el código sea limpio
+const CORE_TECHS = [
+  { name: "TypeScript", icon: TypeScript },
+  { name: "JavaScript", icon: Javascript },
+  { name: "React", icon: React },
+  { name: "Next.js", icon: Next },
+  { name: "Node.js", icon: Node },
+  { name: "Tailwind", icon: Tailwind },
+  { name: "Firebase", icon: Firebase },
+];
+
+const TOOLS_AND_OTHER = [
+  { name: "PostgreSQL", icon: PostgreeSQL },
+  { name: "Sequelize", icon: Sequelize },
+  { name: "Playwright", icon: Playwright },
+  { name: "Git", icon: Git },
+  { name: "GitHub", icon: GitHub },
+  { name: "Figma", icon: Figma },
+  { name: "VS Code", icon: VisualStudio },
+  { name: "HTML5", icon: Iconhtml },
+  { name: "CSS3", icon: CSS },
+];
 ---
 
-
-<div class="relative w-full h-auto overflow-hidden mt-6">
-    <div class="flex items-center justify-center gap-6 flex-wrap p-2">
-        <div class="flex flex-col items-center hover:scale-105 transition-transform duration-300 transform">
-        <Javascript class="h-16 w-16 md:h-20 md:w-20"/>
-        <h2 class="font-bold text-sm md:text-base">Javascript</h2>
-        </div>
-
-        <div class="flex flex-col items-center hover:scale-105 transition-transform duration-300 transform">
-            <TypeScript class="h-16 w-16 md:h-20 md:w-20"/>
-            <h2 class="font-bold text-sm md:text-base">TypeScript</h2>
-        </div>
-
-        <div class="flex flex-col items-center hover:scale-105 transition-transform duration-300 transform">
-            <Next class="h-16 w-16 md:h-20 md:w-20"/>
-            <h2 class="font-bold text-sm md:text-base">Next</h2>
-        </div>
-
-        <div class="flex flex-col items-center hover:scale-105 transition-transform duration-300 transform">
-            <React class="h-16 w-16 md:h-20 md:w-20"/>
-            <h2 class="font-bold text-sm md:text-base">React</h2>
-        </div>
-
-        <div class="flex flex-col items-center hover:scale-105 transition-transform duration-300 transform">
-            <AstroIcon class="h-16 w-16 md:h-20 md:w-20" />
-            <h2 class="font-bold text-sm md:text-base">Astro</h2>
-        </div>
-
-        <div class="flex flex-col items-center hover:scale-105 transition-transform duration-300 transform">
-            <Vue class="h-16 w-16 md:h-20 md:w-20"/>
-            <h2 class="font-bold text-sm md:text-base">Vue</h2>
-        </div>
-
-        <div class="flex flex-col items-center hover:scale-105 transition-transform duration-300 transform">
-            <Node class="h-16 w-16 md:h-20 md:w-20"/>
-            <h2 class="font-bold text-sm md:text-base">Node</h2>
-        </div>
-
-        <div class="flex flex-col items-center hover:scale-105 transition-transform duration-300 transform">
-            <Svelte class="h-16 w-16 md:h-20 md:w-20"/>
-            <h2 class="font-bold text-sm md:text-base">Svelte</h2>
-        </div>
-
-        <div class="flex flex-col items-center hover:scale-105 transition-transform duration-300 transform">
-            <Git class="h-16 w-16 md:h-20 md:w-20"/>
-            <h2 class="font-bold text-sm md:text-base">Git</h2>
-        </div>
-
-        <div class="flex flex-col items-center hover:scale-105 transition-transform duration-300 transform">
-            <Iconhtml class="h-16 w-16 md:h-20 md:w-20"/>
-            <h2 class="font-bold text-sm md:text-base">HTML</h2>
-        </div>
-
-        <div class="flex flex-col items-center hover:scale-105 transition-transform duration-300 transform" >
-            <CSS class="h-16 w-16 md:h-20 md:w-20" />
-            <h2 class="font-bold text-sm md:text-base">CSS</h2>
-        </div>
-
-        <div class="flex flex-col items-center hover:scale-105 transition-transform duration-300 transform" >
-            <Tailwind class="h-16 w-16 md:h-20 md:w-20"/>
-            <h2 class="font-bold text-sm md:text-base">Tailwind</h2>
-        </div>
-
-        <div class="flex flex-col items-center hover:scale-105 transition-transform duration-300 transform" >
-            <Firebase class="h-16 w-16 md:h-20 md:w-20"/>
-            <h2 class="font-bold text-sm md:text-base">Firebase</h2>
-        </div>
-
-        <div class="flex flex-col items-center hover:scale-105 transition-transform duration-300 transform" >
-            <PostgreeSQL class="h-16 w-16 md:h-20 md:w-20"/>
-            <h2 class="font-bold text-sm md:text-base">PostgreeSQL</h2>
-        </div>
-
-        <div class="flex flex-col items-center hover:scale-105 transition-transform duration-300 transform" >
-            <Sequelize class="h-16 w-16 md:h-20 md:w-20"/>
-            <h2 class="font-bold text-sm md:text-base">Sequelize</h2>
-        </div>
-
-        <div class="flex flex-col items-center hover:scale-105 transition-transform duration-300 transform" >
-            <Cypress class="h-16 w-16 md:h-20 md:w-20"/>
-            <h2 class="font-bold text-sm md:text-base">Cypress</h2>
-        </div>
-
-        <div class="flex flex-col items-center hover:scale-105 transition-transform duration-300 transform" >
-            <Playwright class="h-16 w-16 md:h-20 md:w-20"/>
-            <h2 class="font-bold text-sm md:text-base">Palywright</h2>
-        </div>
-
-        <div class="flex flex-col items-center hover:scale-105 transition-transform duration-300 transform" >
-            <Figma class="h-16 w-16 md:h-20 md:w-20"/>
-            <h2 class="font-bold text-sm md:text-base">Figma</h2>
-        </div>
-
-        <div class="flex flex-col items-center hover:scale-105 transition-transform duration-300 transform" >
-            <VisualStudio class="h-16 w-16 md:h-20 md:w-20"/>
-            <h2 class="font-bold text-sm md:text-base">VSCode</h2>
-        </div>
-
-        <div class="flex flex-col items-center hover:scale-105 transition-transform duration-300 transform" >
-            <GitHub class="h-16 w-16 md:h-20 md:w-20" />
-            <h2 class="font-bold text-sm md:text-base">GitHub</h2>
-        </div>    
+<div class="flex flex-col gap-y-12 mt-12 max-w-5xl mx-auto px-4">
+  <!-- Tecnologías Principales -->
+  <section>
+    <h3
+      class="text-xl font-semibold mb-8 text-amber-700 dark:text-yellow-200/80 flex items-center gap-2"
+    >
+      <span class="w-8 h-px bg-amber-700/50 dark:bg-yellow-200/50"></span>
+      Principales
+    </h3>
+    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-8">
+      {
+        CORE_TECHS.map(({ name, icon: Icon }) => (
+          <div class="group flex flex-col items-center gap-y-2">
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10 group-hover:border-yellow-200/50 group-hover:bg-white/10 transition-all duration-300">
+              <Icon class="size-12 md:size-14 transition-transform duration-300 group-hover:scale-110" />
+            </div>
+            <span class="text-xs font-medium opacity-70 group-hover:opacity-100 transition-opacity">
+              {name}
+            </span>
+          </div>
+        ))
+      }
     </div>
+  </section>
+
+  <!-- Otras Herramientas -->
+  <section>
+    <h3
+      class="text-xl font-semibold mb-8 text-blue-500/80 flex items-center gap-2"
+    >
+      <span class="w-8 h-px bg-blue-500/50"></span> Herramientas y Testing
+    </h3>
+    <div
+      class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 gap-6"
+    >
+      {
+        TOOLS_AND_OTHER.map(({ name, icon: Icon }) => (
+          <div class="group flex flex-col items-center gap-y-2 opacity-80 hover:opacity-100 transition-opacity">
+            <div class="p-3 rounded-lg bg-white/5 border border-white/5 group-hover:border-blue-200/30 transition-all">
+              <Icon class="size-8 md:size-10 grayscale group-hover:grayscale-0 transition-all duration-300" />
+            </div>
+            <span class="text-[10px] uppercase tracking-wider font-semibold opacity-50">
+              {name}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </section>
 </div>

@@ -1,39 +1,61 @@
 ---
-const currentYear = new Date().getFullYear()
-import Gmail from "../icons/Gmail.astro"
-import LinkedIn from "../icons/LinkedIn.astro"
-import GitHub from "../icons/GitHub.astro"
+const currentYear = new Date().getFullYear();
+import Gmail from "../icons/Gmail.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
+import GitHub from "../icons/GitHub.astro";
 ---
 
-<footer class="opacity-80 m-4 mt-16 w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10">
-    <div class="flex flex-col md:flex-row items-center justify-between py-4 px-6 mx-auto max-w-screen-xl space-y-4 md:space-y-0">
-        <!-- Texto del pie de página -->
-        <span class="text-sm text-zinc-800 dark:text-zinc-200 text-center md:text-left">
-            © {currentYear}
-            <a href="/#sobre-mi" class="hover:underline">Gustavo Cortes</a>. Todos los derechos reservados
-        </span>
-
-        <!-- Enlaces de redes sociales -->
-        <div class="flex space-x-6 justify-center md:justify-start">
-            <a href="https://www.linkedin.com/in/cortes-gustavo/" aria-label="Perfil de LinkedIn de Gustavo Cortes" target="_blank" class="hover:scale-110 transition-transform duration-300">
-                <LinkedIn class="h-6 w-6 text-blue-600"/>
-            </a>
-            <a href="https://github.com/GCortesGustavo" target="_blank" aria-label="Perfil de Github de Gustavo Cortes" class="hover:scale-110 transition-transform duration-300">
-                <GitHub class="h-6 w-6 text-gray-800"/>
-            </a>
-            <a href="mailto:gustavocortes934@gmail.com" aria-label="Enviar Mail a Gustavo Cortes" class="hover:scale-110 transition-transform duration-300">
-                <Gmail class="h-6 w-6 text-red-600"/>
-            </a>
-        </div>
-
-        <!-- Enlaces adicionales -->
-        <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 text-sm font-medium dark:text-white">
-            <li>
-                <a href="/#sobre-mi" class="hover:underline m-2">Sobre mí</a>
-            </li>
-            <li>
-                <a href="mailto:gustavocortes934@gmail.com" class="hover:underline m-2">Contacto</a>
-            </li>
-        </ul>
+<footer class="mt-20 py-10 px-6 border-t border-slate-200 dark:border-white/5">
+  <div
+    class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8"
+  >
+    <div class="text-center md:text-left space-y-2">
+      <p class="text-sm font-semibold text-slate-800 dark:text-slate-200">
+        © {currentYear}
+        <span class="text-amber-600 dark:text-yellow-200"
+          >Gustavo Adolfo Cortés</span
+        >
+      </p>
+      <p class="text-xs text-slate-500 dark:text-gray-400">
+        Hecho con Astro, Tailwind CSS y mucho mate. 🧉
+      </p>
     </div>
+
+    <!-- Redes Sociales: Estilo consistente -->
+    <div class="flex gap-x-6">
+      <a
+        href="https://linkedin.com/in/cortes-gustavo/"
+        target="_blank"
+        class="text-slate-400 hover:text-blue-500 transition-colors"
+      >
+        <LinkedIn class="size-6" />
+      </a>
+      <a
+        href="https://github.com/GCortesGustavo"
+        target="_blank"
+        class="text-slate-400 hover:text-white dark:hover:text-white transition-colors"
+      >
+        <GitHub class="size-6" />
+      </a>
+      <a
+        href="mailto:gustavocortes934@gmail.com"
+        class="text-slate-400 hover:text-red-500 transition-colors"
+      >
+        <Gmail class="size-6" />
+      </a>
+    </div>
+
+    <nav
+      class="flex gap-x-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-gray-400"
+    >
+      <a
+        href="#sobre-mi"
+        class="hover:text-amber-600 dark:hover:text-yellow-200">Sobre mí</a
+      >
+      <a
+        href="#contacto"
+        class="hover:text-amber-600 dark:hover:text-yellow-200">Contacto</a
+      >
+    </nav>
+  </div>
 </footer>
